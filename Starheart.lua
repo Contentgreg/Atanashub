@@ -132,6 +132,8 @@ local function refreshParts()
     currentIndex = 0
 end
 
+local Paragraph = Tab:CreateParagraph({Title = "1/30/26 Added Building Tools", Content = "Access them through Stars Align -> Fun stuff -> Building Tools"})
+
 Tab:CreateSection("Movement")
 
 local SpeedToggle = Tab:CreateToggle({
@@ -178,7 +180,7 @@ local JumpInput = Tab:CreateInput({
    end,
 })
 
- local Section = Tab:CreateSection("Stars")
+local Section = Tab:CreateSection("Stars")
 
 
 local Button = Tab:CreateButton({
@@ -361,6 +363,18 @@ local Button = Tab:CreateButton({
     Name = "Teleport to Blender Island",
     Callback = function()
     game.Players.LocalPlayer.Character:MoveTo(Vector3.new(659, 60, -1971))
+    end,
+})
+
+local Section = Tab:CreateSection("Fun stuff")
+
+
+local Button = Tab:CreateButton({
+    Name = "Building Tools (client-sided)",
+    Callback = function()
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+	wait(0.5)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/refs/heads/main/f3x.lua"))()
     end,
 })
 
